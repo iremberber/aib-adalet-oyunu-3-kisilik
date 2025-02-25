@@ -125,15 +125,19 @@
     function hesapla() {
     let ort = ((sayi1 + sayi2 + sayi3) / 3) * 0.8;
     ort = Number(ort.toFixed(2));
+
     let farklar = [Math.abs(sayi1 - ort), Math.abs(sayi2 - ort), Math.abs(sayi3 - ort)];
     let enKucukFark = Math.min(...farklar);
     let kazananlar = [];
-    
+
     if (farklar[0] === enKucukFark) kazananlar.push("1. oyuncu");
     if (farklar[1] === enKucukFark) kazananlar.push("2. oyuncu");
     if (farklar[2] === enKucukFark) kazananlar.push("3. oyuncu");
 
-    document.getElementById("sonuc").innerHTML = `<strong>${ort}</strong>`;
+    let kazananMetni = kazananlar.length > 1 ? "Kazananlar: " : "Kazanan: ";
+    kazananMetni += kazananlar.join(", ");
+
+    document.getElementById("sonuc").innerHTML = `<strong>Ortalama: ${ort}</strong><br>${kazananMetni}`;
     document.getElementById("result").style.display = "block";
 }
     function restartGame() {
