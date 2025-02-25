@@ -123,7 +123,7 @@
         hesapla();
     }
     function hesapla() {
-        let ort = (sayi1 + sayi2 + sayi3) * 0.8 * 0.5;
+        let ort = (sayi1 + sayi2 + sayi3) * 0.8 /3;
         ort = Number(ort.toFixed(2));
         let farklar = [Math.abs(sayi1 - ort), Math.abs(sayi2 - ort), Math.abs(sayi3 - ort)];
         let enKucukFark = Math.min(...farklar);
