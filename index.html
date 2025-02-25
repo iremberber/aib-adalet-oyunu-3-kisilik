@@ -97,8 +97,8 @@
     let sayi1, sayi2, sayi3;
     function kaydet1() {
         sayi1 = parseInt(document.getElementById("yarismaci1").value);
-        if (sayi1 < 1 || sayi1 > 100 || isNaN(sayi1)) {
-            alert("Lütfen 1-100 arası bir sayı girin.");
+        if (sayi1 < 0 || sayi1 > 100 || isNaN(sayi1)) {
+            alert("Lütfen 0-100 arası bir sayı girin.");
             return;
         }
         document.getElementById("player1").style.display = "none";
@@ -106,8 +106,8 @@
     }
     function kaydet2() {
         sayi2 = parseInt(document.getElementById("yarismaci2").value);
-        if (sayi2 < 1 || sayi2 > 100 || isNaN(sayi2)) {
-            alert("Lütfen 1-100 arası bir sayı girin.");
+        if (sayi2 < 0 || sayi2 > 100 || isNaN(sayi2)) {
+            alert("Lütfen 0-100 arası bir sayı girin.");
             return;
         }
         document.getElementById("player2").style.display = "none";
@@ -115,8 +115,8 @@
     }
     function kaydet3() {
         sayi3 = parseInt(document.getElementById("yarismaci3").value);
-        if (sayi3 < 1 || sayi3 > 100 || isNaN(sayi3)) {
-            alert("Lütfen 1-100 arası bir sayı girin.");
+        if (sayi3 < 0 || sayi3 > 100 || isNaN(sayi3)) {
+            alert("Lütfen 0-100 arası bir sayı girin.");
             return;
         }
         document.getElementById("player3").style.display = "none";
@@ -135,8 +135,15 @@
         document.getElementById("result").style.display = "block";
     }
     function restartGame() {
-        location.reload();
-    }
+    document.getElementById("result").style.display = "none";
+    document.getElementById("player1").style.display = "block";
+    document.getElementById("player2").style.display = "none";
+    document.getElementById("player3").style.display = "none";
+    
+    document.getElementById("yarismaci1").value = "";
+    document.getElementById("yarismaci2").value = "";
+    document.getElementById("yarismaci3").value = "";
+}
 </script>
 </body>
 </html>
